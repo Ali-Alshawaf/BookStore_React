@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 const BookDetails = () => {
     const { id } = useParams();
     const [book, setBook] = useState(null);
+    const { t } = useTranslation();
 
     useEffect(() => {
         const fetchBook = async () => {
@@ -20,7 +22,7 @@ const BookDetails = () => {
     }, [id]);
 
     if (!book) {
-        return <div className="container mt-4">Loading book details...</div>;
+        return <div className="container mt-4">{t("bookDetails.loading")}</div>;
     }
 
     return (
@@ -35,8 +37,13 @@ const BookDetails = () => {
                 </div>
                 <div className="col-md-6">
                     <h1 className="mt-3">{book.title}</h1>
-                    <h4 className="mt-3"><strong>Price:</strong> ${book.price}</h4>
+                    <h4 className="mt-3">
+                        <strong>{t("bookDetails.price")}:</strong> ${book.price}
+                    </h4>
                     <h4 className="mt-3">{book.description}</h4>
+                    <button className="btn btn-dark mt-3">
+                        {t("bookDetails.addToCart")}
+                    </button>
                 </div>
             </div>
         </div>

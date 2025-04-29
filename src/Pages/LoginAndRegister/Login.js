@@ -1,52 +1,39 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./LoginAndRegister.css";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Initialize the navigate function
+  const { t, i18n } = useTranslation();
 
-  const handleLogin = async () => {
-    try {
-      const response = await fetch("https://localhost:7029/api/account/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        alert("Login successful!");
-        navigate("/Book"); 
-      } else {
-        const errorMessage = await response.text();
-        alert(`Error: ${errorMessage}`);
-      }
-    } catch (error) {
-      console.error("Login failed", error);
-      alert("Failed to login. Please try again later.");
-    }
-  };
+  // Check if the active language is Arabic
+  const isArabic = i18n.language === "ar";
 
   return (
-    <div className="con">
+    <div className="cont" dir={isArabic ? "ltr" : "rtl"}>
+      <div className="background-section"></div>
 
-<h1 className="Title">Login</h1>
-            
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <button className="form-group btn-dark" onClick={handleLogin}>Login</button>
-
-
-            <hr className="Line" />
-            <div className="flex-container">
-                <div className="Links">
-                    <a href="Register" className="link">Register</a>
-                </div>
-            </div>
-            </div>
-
-   
+      <div className="form-section">
+        <h1 className="text-center">{t("login.title")}</h1>
+        <input
+          type="email"
+          placeholder={t("login.emailPlaceholder")}
+          style={{ textAlign: isArabic ? "right" : "left" }}
+        />
+        <input
+          type="password"
+          placeholder={t("login.passwordPlaceholder")}
+          style={{ textAlign: isArabic ? "right" : "left" }}
+        />
+        <button className="submit btn-dark">{t("login.buttonText")}</button>
+        <hr className="Line" />
+        <div className="Links">
+          <Link to="/Register" className="link">
+            {t("login.registerLink")}
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };
 

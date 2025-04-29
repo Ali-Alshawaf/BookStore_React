@@ -1,0 +1,72 @@
+{
+    "navbar": {
+      "home": "الصفحة الرئيسية",
+      "books": "الكتب",
+      "about": "عنا",
+      "contact": "اتصل",
+      "cart": "عربة التسوق",
+      "login": "تسجيل الدخول",
+      "register": "إنشاء حساب",
+      "bookstore": "متجر الكتب"
+    },
+    "book": {
+          "title": "قائمة الكتب",
+          "addToCart": "أضف إلى السلة",
+          "viewDetails": "التفاصيل",
+          "price": "السعر",
+          "successMessage": "تمت إضافة الكتاب إلى السلة بنجاح!"
+    },
+        
+    "bookDetails": {
+        "loading": "جاري تحميل تفاصيل الكتاب...",
+        "price": "السعر",
+        "addToCart": "أضف إلى السلة"
+    },
+    
+    "contact": {
+          "title": "اتصل بنا",
+          "name": "الاسم",
+          "email": "البريد الإلكتروني",
+          "phone": "رقم الهاتف",
+          "message": "الرسالة",
+          "send": "إرسال"
+    },
+    
+        "login": {
+          "title": "تسجيل الدخول",
+          "emailPlaceholder": "البريد الإلكتروني",
+          "passwordPlaceholder": "كلمة المرور",
+          "buttonText": "تسجيل الدخول",
+          "registerLink": "إنشاء حساب"
+        }
+      ,
+      
+        "register": {
+          "title": "إنشاء حساب",
+          "namePlaceholder": "الاسم",
+          "emailPlaceholder": "البريد الإلكتروني",
+          "passwordPlaceholder": "كلمة المرور",
+          "buttonText": "إنشاء حساب",
+          "loginLink": "تسجيل الدخول"
+        },
+        
+            "home": {
+              "welcomeMessage": "مرحبا بك في متجر الكتب الإلكتروني",
+              "subMessage": "اعثر على كتابك المفضل بسهولة.",
+              "exploreButton": "استكشف الكتب"
+            }
+          
+          
+      
+      
+      
+
+      
+      
+      
+      
+          
+          
+      
+  }
+  

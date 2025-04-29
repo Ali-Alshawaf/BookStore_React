@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter ,Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Register from './Pages/LoginAndRegister/Register';
 import Login from './Pages/LoginAndRegister/Login';
@@ -9,38 +9,44 @@ import BookDetail from './Pages/Book/BookDetail';
 import AddBook from './Pages/Book/AddBook';
 import Home from './Pages/Home/Home';
 import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer'
-import Contact from './Pages/Contact/Contact'
+import Footer from './Components/Footer/Footer';
+import Contact from './Pages/Contact/Contact';
+import Error from './Pages/Error/Error';
 
 
 
 function App() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh",marginTop:"80px" }}>
-      <BrowserRouter>
-      
-        <Header />
-        <main >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Cart" element={<Cart />} />
-            <Route path="/Book" element={<Book />} />
-            <Route path="/AddBook" element={<AddBook />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/book/:id" element={<BookDetail />} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
 
+        <Route
+          path="/*"
+          element={
+            <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", marginTop: "80px" }}>
+              <Header />
+              <main>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/Home" element={<Home />} />
+                  <Route path="/Cart"exact render={() => <Cart cart={Cart} />} />
+                  <Route path="/Book" element={<Book />} />
+                  <Route path="/AddBook" element={<AddBook />} />
+                  <Route path="/Contact" element={<Contact />} />
+                  <Route path="/book/:id" element={<BookDetail />} />
+                  <Route path="/*" element={<Error />} />
 
-
-          </Routes>
-        </main>
-        <Footer />
-      </BrowserRouter>
-    </div>
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 
 export default App;
