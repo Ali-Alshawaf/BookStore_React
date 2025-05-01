@@ -6,7 +6,7 @@ import Login from './Pages/LoginAndRegister/Login';
 import Cart from './Pages/Cart/Cart';
 import Book from './Pages/Book/Book';
 import BookDetail from './Pages/Book/BookDetail';
-import AddBook from './Pages/Book/AddBook';
+/**import AddBook from './Pages/Book/AddBook';**/
 import Home from './Pages/Home/Home';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -35,7 +35,7 @@ function App() {
                   <Route path="/Home" element={<Home />} />
                   <Route path="/Cart" element={<Cart />} />
                   <Route path="/Book" element={<Book />} />
-                  <Route path="/AddBook" element={<AddBook />} />
+               {/*<Route path="/AddBook" element={<AddBook />} />*/}
                   <Route path="/Contact" element={<Contact />} />
                   <Route path="/About" element={<About />} />
                   <Route path="/book/:id" element={<BookDetail />} />
