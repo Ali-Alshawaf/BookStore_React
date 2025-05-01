@@ -11,7 +11,9 @@ import Home from './Pages/Home/Home';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Contact from './Pages/Contact/Contact';
+import About from './Pages/About/About';
 import Error from './Pages/Error/Error';
+
 
 
 
@@ -31,10 +33,11 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/Home" element={<Home />} />
-                  <Route path="/Cart"exact render={() => <Cart cart={Cart} />} />
+                  <Route path="/Cart" element={<Cart />} />
                   <Route path="/Book" element={<Book />} />
                   <Route path="/AddBook" element={<AddBook />} />
                   <Route path="/Contact" element={<Contact />} />
+                  <Route path="/About" element={<About />} />
                   <Route path="/book/:id" element={<BookDetail />} />
                   <Route path="/*" element={<Error />} />
 

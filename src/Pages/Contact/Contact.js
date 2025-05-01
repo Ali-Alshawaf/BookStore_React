@@ -2,62 +2,84 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Contact = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const isRTL = i18n.language === 'ar';
 
     return (
-        <div className="container">
-            <h1 className="text-center">{t("contact.title")}</h1>
+        <div className="container d-flex justify-content-center" style={{ minHeight: '100vh' }}>
+            <div className="col-md-6">
+                <h1 className="my-4 text-center">{t("contact.title")}</h1>
 
-            <div className="form-group">
-                <label>
-                    {t("contact.name")}:
-                    <input
-                        className="form-control"
-                        type="text"
-                        name="Name"
-                        required
-                    />
-                </label>
-            </div>
-            <div className="form-group">
-                <label>
-                    {t("contact.email")}:
-                    <input
-                        className="form-control"
-                        type="text"
-                        name="Email"
-                        required
-                    />
-                </label>
-            </div>
-            <div className="form-group">
-                <label>
-                    {t("contact.phone")}:
-                    <input
-                        className="form-control"
-                        type="number"
-                        name="Number"
-                        required
-                    />
-                </label>
-            </div>
-            <div className="form-group">
-                <label>
-                    {t("contact.message")}:
-                    <textarea
-                        className="form-control"
-                        name="Message"
-                        required
-                    />
-                </label>
-            </div>
-            <div className="form-group">
-                <button className="btn btn-dark" type="button">
-                    {t("contact.send")}
-                </button>
+                <form>
+                    <div className="form-group">
+                        <label
+                            htmlFor="name"
+                            className={isRTL ? "text-end d-block" : "text-start d-block"}>
+                            {t("contact.name")}
+                        </label>
+                        <input
+                            className="form-control"
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder={t("contact.placeholderName")}
+                            required
+                            dir={isRTL ? "rtl" : "ltr"} />
+                    </div>
+
+                    <div className="form-group">
+                        <label
+                            htmlFor="email"
+                            className={isRTL ? "text-end d-block" : "text-start d-block"}>
+                            {t("contact.email")}
+                        </label>
+                        <input
+                            className="form-control"
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Example@gmail.com"
+                            required />
+                    </div>
+
+                    <div className="form-group">
+                        <label
+                            htmlFor="phone"
+                            className={isRTL ? "text-end d-block" : "text-start d-block"}>
+                            {t("contact.phone")}
+                        </label>
+                        <input
+                            className="form-control"
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+966 5xxx xxxxx"
+                            required />
+                    </div>
+
+                    <div className="form-group">
+                        <label
+                            htmlFor="message"
+                            className={isRTL ? "text-end d-block" : "text-start d-block"}>
+                            {t("contact.message")}
+                        </label>
+                        <textarea
+                            className="form-control"
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder={t("contact.placeholderMessage")}
+                            required
+                            dir={isRTL ? "rtl" : "ltr"}></textarea>
+                    </div>
+
+                    <button className="btn btn-dark mt-3" type="submit">
+                        {t("contact.send")}
+                    </button>
+                </form>
+
             </div>
         </div>
     );
 };
-
 export default Contact;

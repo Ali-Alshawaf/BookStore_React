@@ -1,5 +1,5 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
@@ -9,21 +9,37 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div className="dropdown mr-3">
+    <div className="dropdown">
       <button
-        className="btn btn-secondary dropdown-toggle"
+        className="btn btn-dark dropdown-toggle"
         type="button"
-        id="languageDropdown"
+        id="dropdownMenuButton1"
         data-bs-toggle="dropdown"
         aria-expanded="false"
-      >Language
+      >
+        <span className="flag-icon flag-icon-us me-1"></span>
+        <span>English</span>
       </button>
-      <ul className="dropdown-menu" aria-labelledby="languageDropdown">
+      <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
         <li>
-          <button className="dropdown-item" onClick={() => changeLanguage('en')}>English</button>
+          <a
+            className="dropdown-item active"
+            href="#!"
+            onClick={() => changeLanguage("en")}
+          >
+            <span className="flag-icon flag-icon-us me-1"></span>
+            <span>English</span>
+          </a>
         </li>
         <li>
-          <button className="dropdown-item" onClick={() => changeLanguage('ar')}>العربية</button>
+          <a
+            className="dropdown-item"
+            href="#!"
+            onClick={() => changeLanguage("ar")}
+          >
+            <span className="flag-icon flag-icon-sa me-1"></span>
+            <span>عربي</span>
+          </a>
         </li>
       </ul>
     </div>

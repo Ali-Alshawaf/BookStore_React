@@ -1,47 +1,66 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./LoginAndRegister.css";
 import { useTranslation } from "react-i18next";
+import "./LoginAndRegister.css";
+
 
 const Register = () => {
-    const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === "ar";
 
-    // Check if the active language is Arabic
-    const isArabic = i18n.language === "ar";
+  return (
+    <div className="d-flex h-100" dir={isArabic ? "ltr" : "rtl"} style={{ minHeight: "100vh" }}>
+      <div className="backgr col-8 d-none d-md-block"></div>
 
-    return (
-        <div className="cont" dir={isArabic ? "ltr" : "rtl"}>
-            <div className="background-section"></div>
+      <div className="col-md-4 d-flex flex-column justify-content-center align-items-center p-4 bg-light">
+        <h1 className="text-center mb-4">{t("register.title")}</h1>
 
-            <div className="form-section">
-                <h1 className="text-center">{t("register.title")}</h1>
-                <input
-                    type="text"
-                    placeholder={t("register.namePlaceholder")}
-                    style={{ textAlign: isArabic ? "right" : "left" }}
-                />
-                <input
-                    type="email"
-                    placeholder={t("register.emailPlaceholder")}
-                    style={{ textAlign: isArabic ? "right" : "left" }}
-                />
-                <input
-                    type="password"
-                    placeholder={t("register.passwordPlaceholder")}
-                    style={{ textAlign: isArabic ? "right" : "left" }}
-                />
-                <button className="submit btn-dark">
-                    {t("register.buttonText")}
-                </button>
-                <hr className="Line" />
-                <div className="Links">
-                    <Link to="/Login" className="link">
-                        {t("register.loginLink")}
-                    </Link>
-                </div>
-            </div>
+        <form className="w-100">
+          <div className="form-group mb-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder={t("register.namePlaceholder")}
+              style={{ textAlign: isArabic ? "right" : "left" }}
+              required
+            />
+          </div>
+
+          <div className="form-group mb-3">
+            <input
+              type="email"
+              className="form-control"
+              placeholder={t("register.emailPlaceholder")}
+              style={{ textAlign: isArabic ? "right" : "left" }}
+              required
+            />
+          </div>
+
+          <div className="form-group mb-3">
+            <input
+              type="password"
+              className="form-control"
+              placeholder={t("register.passwordPlaceholder")}
+              style={{ textAlign: isArabic ? "right" : "left" }}
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn btn-dark w-100">
+            {t("register.buttonText")}
+          </button>
+        </form>
+
+        <hr className="w-100 my-4" />
+
+        <div>
+          <Link to="/Login" className="text-decoration-none">
+            {t("register.loginLink")}
+          </Link>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Register;

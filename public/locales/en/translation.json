@@ -1,20 +1,20 @@
 {
     "navbar": {
-      "home": "Home",
-      "books": "Books",
-      "about": "About",
-      "contact": "Contact",
-      "cart": "Cart",
-      "login": "Login",
-      "register": "Register",
-      "bookstore": "Book Store"
+        "home": "Home",
+        "books": "Books",
+        "about": "About",
+        "contact": "Contact",
+        "cart": "Cart",
+        "login": "Login",
+        "register": "Register",
+        "bookstore": "Book Store"
     },
     "book": {
-      "title": "Book List",
-      "addToCart": "Add to Cart",
-      "viewDetails": "Details",
-      "price": "Price",
-      "successMessage": "Book added to cart successfully!"
+        "title": "Book List",
+        "addToCart": "Add to Cart",
+        "viewDetails": "Details",
+        "price": "Price",
+        "successMessage": "Book added to cart successfully!"
     },
     "bookDetails": {
         "loading": "Loading book details...",
@@ -22,48 +22,37 @@
         "addToCart": "Add to Cart"
     },
     "contact": {
-        "title": "Contact",
-        "name": "Name",
-        "email": "Email",
-        "phone": "Phone Number",
-        "message": "Message",
-        "send": "Send"
+        "title": "Contact Us",
+        "name": "Name :",
+        "email": "Email :",
+        "phone": "Phone Number :",
+        "message": "Message :",
+        "send": "Send",
+        "placeholderName": "Write your name",
+        "placeholderMessage": "Write your message..."
     },
-    
-        "login": {
-          "title": "Login",
-          "emailPlaceholder": "Email",
-          "passwordPlaceholder": "Password",
-          "buttonText": "Login",
-          "registerLink": "Register"
-        }
-        ,
-            "register": {
-              "title": "Register",
-              "namePlaceholder": "Name",
-              "emailPlaceholder": "Email",
-              "passwordPlaceholder": "Password",
-              "buttonText": "Register",
-              "loginLink": "Login"
-            },
-            
-                "home": {
-                  "welcomeMessage": "Welcome to Online Bookstore",
-                  "subMessage": "Find your next favorite book with ease.",
-                  "exploreButton": "Explore Books"
-                }
-              
-              
-          
-          
-      
-      
-      
-      
-      
-    
-  }
-  
-    
-  
-  
+    "login": {
+        "title": "Login",
+        "emailPlaceholder": "Email",
+        "passwordPlaceholder": "Password",
+        "buttonText": "Login",
+        "registerLink": "Register"
+    },
+    "register": {
+        "title": "Register",
+        "namePlaceholder": "Name",
+        "emailPlaceholder": "Email",
+        "passwordPlaceholder": "Password",
+        "buttonText": "Register",
+        "loginLink": "Login"
+    },
+    "home": {
+        "welcomeMessage": "Welcome to Online Bookstore",
+        "subMessage": "Find your favorite book with ease.",
+        "exploreButton": "Explore Books"
+    },
+    "About": {
+        "title": "About us"
+        
+    }
+}
