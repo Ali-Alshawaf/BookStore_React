@@ -6,11 +6,12 @@ const Footer = () => {
       <div className="container">
         <div className="d-flex justify-content-center align-items-center flex-wrap">
           <p className="mb-0 me-2">
-            Dev by Ali Alshawaf 
+            Dev by Ali Alshawaf
           </p>
           <a
             href="https://github.com/Ali-Alshawaf"
             target="_blank"
+            rel="noreferrer"
             className="text-light">
             <i className="fab fa-github fa-lg"></i>
           </a>

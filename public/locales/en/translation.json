@@ -6,14 +6,17 @@
         "contact": "Contact",
         "cart": "Cart",
         "login": "Login",
+        "Logout": "Logout",
         "register": "Register",
-        "bookstore": "Book Store"
+        "bookstore": "Book Store",
+        "MyAccount": "My Account"
     },
     "book": {
         "title": "Book List",
         "addToCart": "Add to Cart",
         "viewDetails": "Details",
         "price": "Price",
+        "priceIcon": "SAR",
         "successMessage": "Book added to cart successfully!"
     },
     "bookDetails": {
@@ -53,6 +56,5 @@
     },
     "About": {
         "title": "About us"
-        
     }
 }

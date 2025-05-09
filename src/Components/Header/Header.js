@@ -1,10 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/home");
+  };
+
+
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === "dark" ? "light" : "dark"));
+  };
 
   const isArabic = i18n.language === "ar";
 
@@ -52,22 +81,62 @@ const Navbar = () => {
           </ul>
 
           <div className="d-flex align-items-center ms-lg-3">
-            <Link className="btn btn-outline-light me-2" to="/Login">
-              <i className="fas fa-sign-in-alt me-1"></i> {t('navbar.login')}
-            </Link>
-            <Link className="btn btn-outline-light me-2" to="/Register">
-              <i className="fas fa-user-plus me-1"></i> {t('navbar.register')}
-            </Link>
+            {user ? (
+              <>
+
+                <div className="dropdown">
+                  <button
+                    className="btn btn-outline-light me-2 dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i className="fas fa-user me-1"></i>Welcome, {user.username}
+
+                  </button>
+                  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><Link className="dropdown-item" to="/">{t('navbar.MyAccount')}</Link></li>
+                    <li>
+                      <button className="dropdown-item" onClick={handleLogout}>
+                        {t('navbar.Logout')}
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+
+
+              </>
+
+            ) : (
+              <>
+                <Link className="btn btn-outline-light me-2" to="/Login">
+                  <i className="fas fa-sign-in-alt me-1"></i> {t('navbar.login')}
+                </Link>
+                <Link className="btn btn-outline-light me-2" to="/Register">
+                  <i className="fas fa-user-plus me-1"></i> {t('navbar.register')}
+                </Link>
+
+              </>
+            )}
             <Link className="btn btn-outline-light me-2" to="/Cart">
               <i className="fas fa-shopping-cart me-1"></i> {t('navbar.cart')}
             </Link>
-          </div>
+            <button
+              className="btn btn-dark ms-auto me-2"
+              onClick={toggleTheme}
+            >
+              <i className={theme === "dark" ? "fas fa-sun" : "fas fa-moon"}></i>
+            </button>
+            <div className="me-2">
 
-          <div className="ms-lg-3">
-            <LanguageSelector />
+              <LanguageSelector />
+
+            </div>
           </div>
         </div>
       </div>
+
     </nav>
   );
 };

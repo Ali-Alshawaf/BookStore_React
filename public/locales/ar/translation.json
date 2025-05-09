@@ -6,14 +6,17 @@
         "contact": "اتصل",
         "cart": "السلة",
         "login": "تسجيل الدخول",
+        "Logout": "تسجيل الخروج",
         "register": "إنشاء حساب",
-        "bookstore": "متجر الكتب"
+        "bookstore": "متجر الكتب",
+        "MyAccount": "حسابي"
     },
     "book": {
         "title": "قائمة الكتب",
         "addToCart": "أضف إلى السلة",
         "viewDetails": "التفاصيل",
         "price": "السعر",
+        "priceIcon": "ر.س",
         "successMessage": "تمت إضافة الكتاب إلى السلة بنجاح!"
     },
     "bookDetails": {

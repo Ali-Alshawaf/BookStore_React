@@ -11,7 +11,7 @@ const BookDetails = () => {
     useEffect(() => {
         const fetchBook = async () => {
             try {
-                const response = await axios.get(`https://book-store12.runasp.net/api/books/${id}`);
+                const response = await axios.get(`https://books-store12.runasp.net/api/books/${id}`);
                 setBook(response.data);
             } catch (error) {
                 console.error("Error fetching book details:", error.response?.data || error.message);
@@ -28,9 +28,9 @@ const BookDetails = () => {
     const addToCart = (book) => {
         const savedCart = localStorage.getItem("cart");
         const cart = savedCart ? JSON.parse(savedCart) : [];
-    
+
         const existingBook = cart.find((item) => item.id === book.id);
-    
+
         if (existingBook) {
             const updatedCart = cart.map((item) =>
                 item.id === book.id ? { ...item, quantity: item.quantity + 1 } : item
@@ -40,17 +40,16 @@ const BookDetails = () => {
             const updatedCart = [...cart, { ...book, quantity: 1 }];
             localStorage.setItem("cart", JSON.stringify(updatedCart));
         }
-    
-        alert(t("book.successMessage")); 
+
+        alert(t("book.successMessage"));
     };
-    
 
     return (
         <div className="container mt-4 mb-4">
             <div className="row">
                 <div className="col-md-6">
                     <img
-                        src={`https://book-store12.runasp.net/Images/${book.image}`}
+                        src={`https://books-store12.runasp.net/Images/${book.image}`}
                         className="img-fluid"
                         alt={book.title}
                     />
@@ -61,7 +60,7 @@ const BookDetails = () => {
                         <strong>{t("bookDetails.price")}:</strong> ${book.price}
                     </h4>
                     <h4 className="mt-3">{book.description}</h4>
-                    <button className="btn btn-dark mt-3" onClick={()=>addToCart(book)}>
+                    <button className="btn btn-dark mt-3" onClick={() => addToCart(book)}>
                         {t("bookDetails.addToCart")}
                     </button>
                 </div>

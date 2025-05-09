@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
@@ -17,13 +18,13 @@ const LanguageSelector = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <span className="flag-icon flag-icon-us me-1"></span>
-        <span>English</span>
+        <span className={`flag-icon flag-icon-${currentLanguage === "ar" ? "sa" : "us"} me-1`}></span>
+        <span>{currentLanguage === "ar" ? "عربي" : "English"}</span>
       </button>
       <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
         <li>
           <a
-            className="dropdown-item active"
+            className={`dropdown-item ${currentLanguage === "en" ? "active" : ""}`}
             href="#!"
             onClick={() => changeLanguage("en")}
           >
@@ -33,7 +34,7 @@ const LanguageSelector = () => {
         </li>
         <li>
           <a
-            className="dropdown-item"
+            className={`dropdown-item ${currentLanguage === "ar" ? "active" : ""}`}
             href="#!"
             onClick={() => changeLanguage("ar")}
           >

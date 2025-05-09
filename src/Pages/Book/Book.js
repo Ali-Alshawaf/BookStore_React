@@ -15,7 +15,7 @@ const Book = () => {
     useEffect(() => {
         const fetchBooks = async () => {
             try {
-                const response = await axios.get("https://book-store12.runasp.net/api/books");
+                const response = await axios.get("https://books-store12.runasp.net/api/Books");
                 setBooks(response.data);
             } catch (error) {
                 console.error("Error fetching books:", error.response?.data || error.message);
@@ -51,15 +51,15 @@ const Book = () => {
                     <div className="col-md-3 mb-4" key={book.id}>
                         <div className="card h-100 d-flex flex-column">
                             <img
-                                src={`https://book-store12.runasp.net/Images/${book.image}`}
+                                src={`https://books-store12.runasp.net/Images/${book.image}`}
                                 className="card-img-top"
-                                alt={book.title}
+                                alt=""
                                 style={{ height: "400px", objectFit: "cover" }}
                             />
                             <div className="card-body d-flex flex-column">
                                 <h5 className="card-title">{book.title}</h5>
                                 <p className="card-text">
-                                    <strong>{t("book.price")}:</strong> ${book.price}
+                                    <strong>{t("book.price")}:</strong> {book.priceIcon}{book.price}
                                 </p>
                                 <div className="mt-auto">
                                     <button className="btn btn-light me-2" onClick={() => addToCart(book)}>

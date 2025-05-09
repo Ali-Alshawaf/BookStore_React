@@ -18,6 +18,7 @@ import Error from './Pages/Error/Error';
 
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -35,7 +36,7 @@ function App() {
                   <Route path="/Home" element={<Home />} />
                   <Route path="/Cart" element={<Cart />} />
                   <Route path="/Book" element={<Book />} />
-               {/*<Route path="/AddBook" element={<AddBook />} />*/}
+                  {/*<Route path="/AddBook" element={<AddBook />} />*/}
                   <Route path="/Contact" element={<Contact />} />
                   <Route path="/About" element={<About />} />
                   <Route path="/book/:id" element={<BookDetail />} />

@@ -9,11 +9,11 @@ const Home = () => {
 
     return (
         <>
-            <div class="hero bg-light py-5">
-                <div class="container text-center">
+            <div className="hero bg-light py-5">
+                <div className="container text-center">
                     <h1 className="display-4">{t("home.welcomeMessage")}</h1>
                     <p className="lead">{t("home.subMessage")}</p>
-                    <Link to="/Book" class="btn btn-dark btn-lg">{t("home.exploreButton")}</Link>
+                    <Link to="/Book" className="btn btn-dark btn-lg">{t("home.exploreButton")}</Link>
                 </div>
             </div>
             <div>
@@ -24,3 +24,4 @@ const Home = () => {
 };
 
 export default Home;
+
