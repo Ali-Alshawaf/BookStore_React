@@ -57,7 +57,7 @@ const BookDetails = () => {
                 <div className="col-md-6">
                     <h1 className="mt-3">{book.title}</h1>
                     <h4 className="mt-3">
-                        <strong>{t("bookDetails.price")}:</strong> ${book.price}
+                        <strong>{t("bookDetails.price")}:</strong> <span class="symbol">&#xea;</span>{book.price}
                     </h4>
                     <h4 className="mt-3">{book.description}</h4>
                     <button className="btn btn-dark mt-3" onClick={() => addToCart(book)}>

@@ -25,7 +25,7 @@ const LanguageSelector = () => {
         <li>
           <a
             className={`dropdown-item ${currentLanguage === "en" ? "active" : ""}`}
-            href="#!"
+            href="#en"
             onClick={() => changeLanguage("en")}
           >
             <span className="flag-icon flag-icon-us me-1"></span>
@@ -35,7 +35,7 @@ const LanguageSelector = () => {
         <li>
           <a
             className={`dropdown-item ${currentLanguage === "ar" ? "active" : ""}`}
-            href="#!"
+            href="#ar"
             onClick={() => changeLanguage("ar")}
           >
             <span className="flag-icon flag-icon-sa me-1"></span>

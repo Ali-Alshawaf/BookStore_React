@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import "./LoginAndRegister.css";
+import LanguageSelector from "../../Components/LanguageSelector/LanguageSelector";
 
 const Register = () => {
   const { t, i18n } = useTranslation();
@@ -29,66 +30,80 @@ const Register = () => {
   };
 
   return (
-    <div className="d-flex h-100" dir={isArabic ? "ltr" : "rtl"} style={{ minHeight: "100vh" }}>
-      <div className="backgr col-8 d-none d-md-block"></div>
+    <div className="container-fluid" dir={isArabic ? "ltr" : "rtl"}>
+      <div className="row min-vh-100">
 
-      <div className="col-md-4 d-flex flex-column justify-content-center align-items-center p-4 bg-light">
-        <h1 className="text-center mb-4">{t("register.title")}</h1>
+        <div className="col-md-8 d-none d-md-block bg-secondary p-0">
+          <div className="backgr w-100 h-100"></div>
+        </div>
 
-        {errorMessage && <p className="text-danger">{errorMessage}</p>}
+        <div className="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center p-4">
+          <h1 className="text-center mb-4">{t("register.title")}</h1>
 
-        <form className="w-100" onSubmit={handleRegister}>
-          <div className="form-group mb-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder={t("register.namePlaceholder")}
-              name="name"
-              value={userData.name}
-              onChange={handleChange}
-              required
-            />
+          {errorMessage && <p className="text-danger w-100">{errorMessage}</p>}
+
+          <form className="w-100" onSubmit={handleRegister}>
+            <div className="form-group mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder={t("register.namePlaceholder")}
+                name="name"
+                value={userData.name}
+                onChange={handleChange}
+                style={{ textAlign: isArabic ? "right" : "left" }}
+                required
+              />
+            </div>
+
+            <div className="form-group mb-3">
+              <input
+                type="email"
+                className="form-control"
+                placeholder={t("register.emailPlaceholder")}
+                name="email"
+                value={userData.email}
+                onChange={handleChange}
+                style={{ textAlign: isArabic ? "right" : "left" }}
+                required
+              />
+            </div>
+
+            <div className="form-group mb-3">
+              <input
+                type="password"
+                className="form-control"
+                placeholder={t("register.passwordPlaceholder")}
+                name="password"
+                value={userData.password}
+                onChange={handleChange}
+                style={{ textAlign: isArabic ? "right" : "left" }}
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-dark w-100">
+              {t("register.buttonText")}
+            </button>
+          </form>
+
+          <hr className="w-100 my-4" />
+
+          <div className="d-flex justify-content-between align-items-center w-100" dir={isArabic ? "rtl" : "ltr"}>
+            <div className="text-start">
+              {t("register.Q")}
+              <Link to="/Login">
+                {t("register.loginLink")}
+              </Link>
+            </div>
+
+            <div className="text-end">
+              <LanguageSelector />
+            </div>
           </div>
-
-          <div className="form-group mb-3">
-            <input
-              type="email"
-              className="form-control"
-              placeholder={t("register.emailPlaceholder")}
-              name="email"
-              value={userData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="form-group mb-3">
-            <input
-              type="password"
-              className="form-control"
-              placeholder={t("register.passwordPlaceholder")}
-              name="password"
-              value={userData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button type="submit" className="btn btn-dark w-100">
-            {t("register.buttonText")}
-          </button>
-        </form>
-
-        <hr className="w-100 my-4" />
-
-        <div>
-          <Link to="/Login" className="text-decoration-none">
-            {t("register.loginLink")}
-          </Link>
         </div>
       </div>
     </div>
   );
 };
-
 export default Register;

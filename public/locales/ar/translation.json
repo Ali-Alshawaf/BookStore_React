@@ -16,7 +16,6 @@
         "addToCart": "أضف إلى السلة",
         "viewDetails": "التفاصيل",
         "price": "السعر",
-        "priceIcon": "ر.س",
         "successMessage": "تمت إضافة الكتاب إلى السلة بنجاح!"
     },
     "bookDetails": {
@@ -39,7 +38,8 @@
         "emailPlaceholder": "البريد الإلكتروني",
         "passwordPlaceholder": "كلمة المرور",
         "buttonText": "تسجيل الدخول",
-        "registerLink": "إنشاء حساب"
+        "registerLink": "إنشاء حساب",
+        "Q": "ليس لديك حساب؟"
     },
     "register": {
         "title": "إنشاء حساب",
@@ -47,7 +47,8 @@
         "emailPlaceholder": "البريد الإلكتروني",
         "passwordPlaceholder": "كلمة المرور",
         "buttonText": "إنشاء حساب",
-        "loginLink": "تسجيل الدخول"
+        "loginLink": "تسجيل الدخول",
+        "Q" : "هل لديك حساب بالفعل؟"
     },
     "home": {
         "welcomeMessage": "مرحبا بك في متجر الكتب الإلكتروني",
@@ -56,5 +57,9 @@
     },
     "About": {
         "title": "عنا"
+    },
+    "Cart": {
+        "YourCart": "سلة التسوق الخاصة بك",
+        "Empty": "عربة التسوق الخاصة بك فارغة."
     }
 }

@@ -12,10 +12,24 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: 'SaudiRiyalSymbol';
+  src: url('/node_modules/saudiriyalsymbol.ttf') format('truetype');
+}
+
+.symbol {
+  font-family: 'SaudiRiyalSymbol', sans-serif;
+  font-size: inherit;
+  margin: 20px auto;
+  color: black;
+  font-weight: bold;
+}
+
 .light {
   background-color: #ffffff;
   color: #000000;
 }
+
 .dark {
   background-color: #343a40;
   color: #ffffff;

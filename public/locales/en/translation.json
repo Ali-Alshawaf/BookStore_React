@@ -16,7 +16,6 @@
         "addToCart": "Add to Cart",
         "viewDetails": "Details",
         "price": "Price",
-        "priceIcon": "SAR",
         "successMessage": "Book added to cart successfully!"
     },
     "bookDetails": {
@@ -39,7 +38,9 @@
         "emailPlaceholder": "Email",
         "passwordPlaceholder": "Password",
         "buttonText": "Login",
-        "registerLink": "Register"
+        "registerLink": "Register",
+        "Q": "Don't have an account?"
+
     },
     "register": {
         "title": "Register",
@@ -47,7 +48,9 @@
         "emailPlaceholder": "Email",
         "passwordPlaceholder": "Password",
         "buttonText": "Register",
-        "loginLink": "Login"
+        "loginLink": "Login",
+        "Q" : "Already have an account?"
+
     },
     "home": {
         "welcomeMessage": "Welcome to Online Bookstore",
@@ -56,5 +59,9 @@
     },
     "About": {
         "title": "About us"
+    },
+    "Cart": {
+        "YourCart": "Your Cart",
+        "Empty": "Your cart is empty."
     }
 }

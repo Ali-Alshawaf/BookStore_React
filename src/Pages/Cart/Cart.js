@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
+  const { t } = useTranslation();
+
 
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
@@ -36,10 +40,10 @@ const Cart = () => {
 
   return (
     <div className="container">
-      <h1 className="my-4 text-center">Your Cart</h1>
+      <h1 className="my-4 text-center">{t("Cart.YourCart")}</h1>
       <hr />
       {cart.length === 0 ? (
-        <p className="text-center">Your cart is empty.</p>
+        <p className="text-center">{t("Cart.Empty")}</p>
       ) : (
         <table className="table table-bordered">
           <thead>

@@ -59,7 +59,7 @@ const Book = () => {
                             <div className="card-body d-flex flex-column">
                                 <h5 className="card-title">{book.title}</h5>
                                 <p className="card-text">
-                                    <strong>{t("book.price")}:</strong> {book.priceIcon}{book.price}
+                                    <strong>{t("book.price")}:</strong><span class="symbol">&#xea;</span>{book.price}
                                 </p>
                                 <div className="mt-auto">
                                     <button className="btn btn-light me-2" onClick={() => addToCart(book)}>
