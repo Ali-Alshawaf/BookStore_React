@@ -57,11 +57,11 @@ const Book = () => {
                                 style={{ height: "400px", objectFit: "cover" }}
                             />
                             <div className="card-body d-flex flex-column">
-                                <h5 className="card-title">{book.title}</h5>
-                                <p className="card-text">
+                                <h5 className="card-title text-center">{book.title}</h5>
+                                <p className="card-text text-center">
                                     <strong>{t("book.price")}:</strong><span class="symbol">&#xea;</span>{book.price}
                                 </p>
-                                <div className="mt-auto">
+                                <div className="mt-auto d-flex justify-content-center">
                                     <button className="btn btn-light me-2" onClick={() => addToCart(book)}>
                                         {t("book.addToCart")}
                                     </button>

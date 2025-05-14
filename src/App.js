@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Register from './Pages/LoginAndRegister/Register';
 import Login from './Pages/LoginAndRegister/Login';
 import Cart from './Pages/Cart/Cart';
@@ -12,6 +11,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
+import Checkout from './Pages/Checkout/Checkout';
 import Error from './Pages/Error/Error';
 
 
@@ -39,6 +39,7 @@ function App() {
                   {/*<Route path="/AddBook" element={<AddBook />} />*/}
                   <Route path="/Contact" element={<Contact />} />
                   <Route path="/About" element={<About />} />
+                  <Route path="/Checkout" element={<Checkout />} />
                   <Route path="/book/:id" element={<BookDetail />} />
                   <Route path="/*" element={<Error />} />
 

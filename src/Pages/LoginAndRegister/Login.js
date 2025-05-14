@@ -34,13 +34,17 @@ const Login = () => {
 
 
   return (
+    
     <div className="container-fluid" dir={isArabic ? "ltr" : "rtl"}>
+      
       <div className="row min-vh-100">
         <div className="col-md-8 d-none d-md-block bg-secondary p-0">
           <div className="backgr w-100 h-100" ></div>
         </div>
+        
 
         <div className="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center p-4">
+        
           <h1 className="text-center mb-4">{t("login.title")}</h1>
 
           <form className="w-100" onSubmit={handleLogin}>

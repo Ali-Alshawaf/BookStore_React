@@ -62,6 +62,11 @@
     },
     "Cart": {
         "YourCart": "Your Cart",
-        "Empty": "Your cart is empty."
+        "Empty": "Your cart is empty.",
+        "BookList": "BookcList",
+        "Books": "Books",
+        "Shipping": "Shipping",
+        "Totalamount": "Totalcamount",
+        "OrderSummary": "Order Summary"
     }
 }
