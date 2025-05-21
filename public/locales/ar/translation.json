@@ -9,7 +9,8 @@
         "Logout": "تسجيل الخروج",
         "register": "إنشاء حساب",
         "bookstore": "متجر الكتب",
-        "MyAccount": "حسابي"
+        "MyAccount": "حسابي",
+        "welcome": "مرحبا"
     },
     "book": {
         "title": "قائمة الكتب",
@@ -48,7 +49,7 @@
         "passwordPlaceholder": "كلمة المرور",
         "buttonText": "إنشاء حساب",
         "loginLink": "تسجيل الدخول",
-        "Q" : "هل لديك حساب بالفعل؟"
+        "Q": "هل لديك حساب بالفعل؟"
     },
     "home": {
         "welcomeMessage": "مرحبا بك في متجر الكتب الإلكتروني",
@@ -65,7 +66,28 @@
         "Books": "كتب",
         "Shipping": "شحن",
         "Totalamount": "المبلغ الإجمالي",
-        "OrderSummary": "ملخص الطلب"
-
+        "OrderSummary": "ملخص الطلب",
+        "Checkout": "دفع"
+    },
+    "Checkout": {
+        "Title": "الدفع",
+        "OrderSummary": "ملخص الطلب",
+        "Products": "الكتب",
+        "Shipping": "الشحن",
+        "TotalAmount": "المبلغ الإجمالي",
+        "BillingAddress": "عنوان الفواتير",
+        "FirstName": "الاسم الأول",
+        "LastName": "الاسم الأخير",
+        "Email": "البريد الإلكتروني",
+        "Address": "العنوان",
+        "Country": "الدولة",
+        "State": "المدينة",
+        "Zip": "الرمز البريدي",
+        "Payment": "الدفع",
+        "NameOnCard": "الاسم على البطاقة",
+        "CardNumber": "رقم البطاقة الائتمانية",
+        "Expiration": "تاريخ الانتهاء",
+        "CVV": "الرمز الأمني",
+        "CheckoutButton": "متابعة الدفع"
     }
 }

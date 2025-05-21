@@ -9,7 +9,8 @@
         "Logout": "Logout",
         "register": "Register",
         "bookstore": "Book Store",
-        "MyAccount": "My Account"
+        "MyAccount": "My Account",
+        "welcome": "Welcome"
     },
     "book": {
         "title": "Book List",
@@ -40,7 +41,6 @@
         "buttonText": "Login",
         "registerLink": "Register",
         "Q": "Don't have an account?"
-
     },
     "register": {
         "title": "Register",
@@ -49,8 +49,7 @@
         "passwordPlaceholder": "Password",
         "buttonText": "Register",
         "loginLink": "Login",
-        "Q" : "Already have an account?"
-
+        "Q": "Already have an account?"
     },
     "home": {
         "welcomeMessage": "Welcome to Online Bookstore",
@@ -66,7 +65,29 @@
         "BookList": "BookcList",
         "Books": "Books",
         "Shipping": "Shipping",
-        "Totalamount": "Totalcamount",
-        "OrderSummary": "Order Summary"
+        "Totalamount": "Total amount",
+        "OrderSummary": "Order Summary",
+        "Checkout": "Checkout"
+    },
+    "Checkout": {
+        "Title": "Checkout",
+        "OrderSummary": "Order Summary",
+        "Products": "Books",
+        "Shipping": "Shipping",
+        "TotalAmount": "Total amount",
+        "BillingAddress": "Billing Address",
+        "FirstName": "First Name",
+        "LastName": "Last Name",
+        "Email": "Email",
+        "Address": "Address",
+        "Country": "Country",
+        "State": "City",
+        "Zip": "Zip",
+        "Payment": "Payment",
+        "NameOnCard": "Name on Card",
+        "CardNumber": "Credit Card Number",
+        "Expiration": "Expiration",
+        "CVV": "CVV",
+        "CheckoutButton": "Continue to Checkout"
     }
 }

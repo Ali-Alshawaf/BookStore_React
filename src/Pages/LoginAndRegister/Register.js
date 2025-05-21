@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 import "./LoginAndRegister.css";
 import LanguageSelector from "../../Components/LanguageSelector/LanguageSelector";
+import Swal from "sweetalert2";
+
 
 const Register = () => {
   const { t, i18n } = useTranslation();
@@ -22,7 +24,14 @@ const Register = () => {
 
     try {
       const response = await axios.post("https://books-store12.runasp.net/api/account/register", userData);
-      alert(response.data.message);
+      Swal.fire({
+        toast: true,       
+        position: "top-end",
+        icon: "success",
+        title: response.data.message,
+        showConfirmButton: false,
+        timer: 3000
+    });
       navigate("/login");
     } catch (error) {
       setErrorMessage(error.response?.data?.message || "Registration failed. Please try again.");

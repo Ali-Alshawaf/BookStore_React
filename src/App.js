@@ -15,6 +15,7 @@ import Error from './Pages/Error/Error';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -23,26 +24,32 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+
   return (
     <BrowserRouter>
-      <Header user={user} setUser={setUser} />
+      <Header user={user} setUser={setUser} cart={cart} />
 
       <Routes>
         <Route path="/Login" element={<Login setUser={setUser} />} />
         <Route path="/Register" element={<Register />} />
-
         <Route path="/*" element={
           <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", marginTop: "80px" }}>
             <main>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/Home" element={<Home />} />
-                <Route path="/Cart" element={<Cart />} />
-                <Route path="/Book" element={<Book />} />
+                <Route path="/" element={<Home cart={cart} setCart={setCart} />} />
+                <Route path="/Home" element={<Home cart={cart} setCart={setCart} />} />
+                <Route path="/Cart" element={<Cart cart={cart} setCart={setCart} />} />
+                <Route path="/Book" element={<Book cart={cart} setCart={setCart} />} />
                 <Route path="/Contact" element={<Contact />} />
                 <Route path="/About" element={<About />} />
-                <Route path="/Checkout" element={<Checkout />} />
-                <Route path="/book/:id" element={<BookDetail />} />
+                <Route path="/Checkout" element={<Checkout cart={cart} setCart={setCart} />} />
+                <Route path="/book/:id" element={<BookDetail cart={cart} setCart={setCart} />} />
                 <Route path="/*" element={<Error />} />
               </Routes>
             </main>

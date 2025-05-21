@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 
-const Home = () => {
+const Home = ({ cart, setCart }) => {
     const { t } = useTranslation();
 
     return (
@@ -17,7 +17,7 @@ const Home = () => {
                 </div>
             </div>
             <div>
-                <Book></Book>
+                <Book cart={cart} setCart={setCart} />
             </div>
         </>
     );

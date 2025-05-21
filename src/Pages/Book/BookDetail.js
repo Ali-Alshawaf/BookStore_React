@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import Swal from "sweetalert2";
 
-const BookDetails = () => {
+const BookDetails = ({ cart, setCart }) => {
     const { id } = useParams();
     const [book, setBook] = useState(null);
     const { t } = useTranslation();
@@ -26,22 +27,28 @@ const BookDetails = () => {
     }
 
     const addToCart = (book) => {
-        const savedCart = localStorage.getItem("cart");
-        const cart = savedCart ? JSON.parse(savedCart) : [];
-
         const existingBook = cart.find((item) => item.id === book.id);
 
+        let updatedCart;
         if (existingBook) {
-            const updatedCart = cart.map((item) =>
+            updatedCart = cart.map((item) =>
                 item.id === book.id ? { ...item, quantity: item.quantity + 1 } : item
             );
-            localStorage.setItem("cart", JSON.stringify(updatedCart));
         } else {
-            const updatedCart = [...cart, { ...book, quantity: 1 }];
-            localStorage.setItem("cart", JSON.stringify(updatedCart));
+            updatedCart = [...cart, { ...book, quantity: 1 }];
         }
 
-        alert(t("book.successMessage"));
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+        Swal.fire({
+            toast: true,
+            position: "top-end",
+            icon: "success",
+            title: t("book.successMessage"),
+            showConfirmButton: false,
+            timer: 3000
+        });
     };
 
     return (
@@ -57,7 +64,7 @@ const BookDetails = () => {
                 <div className="col-md-6">
                     <h1 className="mt-3">{book.title}</h1>
                     <h4 className="mt-3">
-                        <strong>{t("bookDetails.price")}:</strong> <span class="symbol">&#xea;</span>{book.price}
+                        <strong>{t("bookDetails.price")}:</strong> <span className="symbol">&#xea;</span>{book.price}
                     </h4>
                     <h4 className="mt-3">{book.description}</h4>
                     <button className="btn btn-dark mt-3" onClick={() => addToCart(book)}>

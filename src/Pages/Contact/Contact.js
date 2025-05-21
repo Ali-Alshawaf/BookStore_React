@@ -23,8 +23,8 @@ const Contact = () => {
                             id="name"
                             name="name"
                             placeholder={t("contact.placeholderName")}
-                            required
-                            dir={isRTL ? "rtl" : "ltr"} />
+
+                            dir={isRTL ? "rtl" : "ltr"} readOnly />
                     </div>
 
                     <div className="form-group">
@@ -39,7 +39,7 @@ const Contact = () => {
                             id="email"
                             name="email"
                             placeholder="Example@gmail.com"
-                            required />
+                            readOnly />
                     </div>
 
                     <div className="form-group">
@@ -54,7 +54,7 @@ const Contact = () => {
                             id="phone"
                             name="phone"
                             placeholder="+966 5xxx xxxxx"
-                            required />
+                            readOnly />
                     </div>
 
                     <div className="form-group">
@@ -69,8 +69,8 @@ const Contact = () => {
                             name="message"
                             rows="4"
                             placeholder={t("contact.placeholderMessage")}
-                            required
-                            dir={isRTL ? "rtl" : "ltr"}></textarea>
+
+                            dir={isRTL ? "rtl" : "ltr"} readOnly></textarea>
                     </div>
 
                     <button className="btn btn-dark mt-3" type="submit">
