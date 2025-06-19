@@ -5,33 +5,41 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@mui/material": "^7.0.2",
+    "@mui/icons-material": "^6.4.7",
+    "@mui/material": "^6.4.8",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "i18next": "^25.0.2",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "bootstrap": "^5.3.7",
+    "flag-icon-css": "^4.1.7",
+    "i18next": "^25.2.1",
     "i18next-http-backend": "^3.0.2",
-    "jwt-decode": "^4.0.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-i18next": "^15.5.1",
-    "react-router": "^7.5.1",
-    "react-router-dom": "^7.5.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.5.3",
+    "react-router-dom": "^7.3.0",
     "react-scripts": "5.0.1",
-    "sweetalert2": "^11.21.1",
-    "web-vitals": "^2.1.4"
+    "sweetalert2": "^11.22.0",
+    "web-vitals": "^4.2.4"
+  },
+  "overrides": {
+    "postcss": "^8.4.31",
+    "nth-check": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -45,5 +53,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^9.0.11",
+    "@storybook/addon-onboarding": "^9.0.11",
+    "@storybook/preset-create-react-app": "^9.0.11",
+    "@storybook/react-webpack5": "^9.0.11",
+    "eslint-plugin-storybook": "^9.0.11",
+    "prop-types": "^15.8.1",
+    "react-refresh": "^0.17.0",
+    "storybook": "^9.0.11",
+    "webpack": "^5.99.9"
   }
 }
